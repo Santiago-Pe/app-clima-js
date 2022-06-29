@@ -9,8 +9,8 @@ const fetchData = async (position) => {
 
         loadingData(true);
 
-        const {latitude, longitude} = position.coords;
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+        const {latitude, longitude, city} = position.coords;
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?{city name}${city}}&lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
         const data = await resp.json();
         printData(data);
 

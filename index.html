@@ -26,7 +26,7 @@
         <!-- Call to action -->
 
         <!-- Dynamic Data -->
-        <section class="row" id="dynamic-content">
+        <section class="row justify-content-center" id="dynamic-content">
             <!-- weather data -->
         </section>
         
@@ -37,18 +37,20 @@
     <!-- Template weather data -->
     <template id="template-weather">
         <!-- weather data -->
-        <article id="data-weather" class="">
-            <h5 class="fs-2 fw-bold text-start" id="location" ></h5>
-            <p class="fs-3 fw-regular text-start" id="description"></p>
-            <p class="fs-3 fw-regular text-start" id="humidity"></p>
-            <p class="fs-3 fw-regular text-start" id="pressure"></p>
-            <p class="fs-3 fw-regular text-start" id="temperature"></p>
-            <p class="fs-3 fw-regular text-start" id="tempMax"></p>
-            <p class="fs-3 fw-regular text-start" id="tempMin"></p>
-            <p class="fs-3 fw-regular text-start" id="feelsLike"></p>
-            <p class="fs-3 fw-regular text-start" id="windSpeed"></p>
-            <p class="fs-3 fw-regular text-start" id="date"></p>
+        <article class="col-3 d-flex justify-content-center">
+                <h5 class="fs-3 fw-bold text-center" id="location" ></h5>
+                <p class="fs-3 fw-regular text-start" id="description"></p>
+                <p class="fs-3 fw-regular text-start" id="humidity"></p>
+                <p class="fs-3 fw-regular text-start" id="tempMin"></p>
+                <p class="fs-3 fw-regular text-start" id="feelsLike"></p>
+                <p class="fs-3 fw-regular text-start" id="windSpeed"></p>
+                <p class="fs-3 fw-regular text-start" id="date"></p>
+                <p class="fs-3 fw-regular text-start" id="pressure"></p>
+                <p class="fs-3 fw-regular text-start" id="temperature"></p>
+                <p class="fs-3 fw-regular text-start" id="tempMax"></p>
+    
         </article>
+
     </template>
 
     <script src="app.js"></script>
