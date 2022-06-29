@@ -1,5 +1,8 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
+const preolader = document.getElementById('preolader');
+
+console.log(preolader)
 
 //Functions
 
@@ -14,14 +17,17 @@ const fetchData = async (position) =>{
 
     // console.log(position)
     try {
+
         loadingData(true);
+
         const {latitude, longitude} = position.coords;
         const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
         const data = await resp.json();
-
+        printData(data);
 
         console.log(data);
         console.log(position);
+
     } catch (error) {
         console.log(error);
     } finally{
@@ -33,6 +39,18 @@ const loadingData = state => {
 }
 const onLoad = () =>{
     navigator.geolocation.getCurrentPosition(fetchData)
+}
+const printData = (data) =>{
+
+    const templateWeather = document.getElementById('template-weather').content;
+    const fragment = document.createDocumentFragment();
+    const  contentWeather = document.getElementById('dynamic-content');
+
+    console.log(data)
+    // data.forEach(element => {
+        
+    // });
+
 }
 
 //Algorithm
