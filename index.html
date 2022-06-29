@@ -10,11 +10,12 @@
     <title>Weather app</title>
 </head>
 <body>
+
     <main class="container my-5">
         
 
         <!-- Preloader -->
-        <section class="d-flex align-items-center justify-content-center d-none" id="preolader">
+        <section class="d-flex align-items-center justify-content-center" id="preolader">
             <div class="spinner-grow" role="status">
 
                 <span class="visually-hidden">Loading...</span>
@@ -37,10 +38,16 @@
     <template id="template-weather">
         <!-- weather data -->
         <article id="data-weather" class="">
-            <h5 class="fs-2 fw-bold text-start data-description" >clear sky</h5>
-            <p class="fs-3 fw-regular text-start temp-max">20</p>
-            <p class="fs-3 fw-regular text-start temp-min">5</p>
-            <p class="fs-3 fw-regular text-start temp-now">9</p>
+            <h5 class="fs-2 fw-bold text-start" id="location" ></h5>
+            <p class="fs-3 fw-regular text-start" id="description"></p>
+            <p class="fs-3 fw-regular text-start" id="humidity"></p>
+            <p class="fs-3 fw-regular text-start" id="pressure"></p>
+            <p class="fs-3 fw-regular text-start" id="temperature"></p>
+            <p class="fs-3 fw-regular text-start" id="tempMax"></p>
+            <p class="fs-3 fw-regular text-start" id="tempMin"></p>
+            <p class="fs-3 fw-regular text-start" id="feelsLike"></p>
+            <p class="fs-3 fw-regular text-start" id="windSpeed"></p>
+            <p class="fs-3 fw-regular text-start" id="date"></p>
         </article>
     </template>
 

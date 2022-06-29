@@ -1,21 +1,10 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
-const preolader = document.getElementById('preolader');
-
-console.log(preolader)
+const preloader = document.getElementById('preolader');
 
 //Functions
 
-const fetchData = async (position) =>{
-
-    // console.log(position.coords.latitude)
-    // const {latitude, longitude, units} = position.coords;
-    // fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lon=${units}&appid=${API_KEY}&units=metric`)
-    //     .then(resp => resp.json())
-    //     .then(data => console.log(data))
-
-
-    // console.log(position)
+const fetchData = async (position) => {
     try {
 
         loadingData(true);
@@ -25,8 +14,8 @@ const fetchData = async (position) =>{
         const data = await resp.json();
         printData(data);
 
-        console.log(data);
-        console.log(position);
+        console.log(data)
+
 
     } catch (error) {
         console.log(error);
@@ -35,21 +24,45 @@ const fetchData = async (position) =>{
     }
 }
 const loadingData = state => {
-    state ? console.log('Cargando data') : console.log('Cargado');
+    state ? preloader.classList.remove('d-none') : preloader.classList.add('d-none');
 }
-const onLoad = () =>{
+const onLoad = () => {
     navigator.geolocation.getCurrentPosition(fetchData)
 }
-const printData = (data) =>{
+const printData = (data) => {
 
     const templateWeather = document.getElementById('template-weather').content;
     const fragment = document.createDocumentFragment();
     const  contentWeather = document.getElementById('dynamic-content');
-
-    console.log(data)
-    // data.forEach(element => {
+    
         
-    // });
+
+    const dataWeather = {
+        location: data.name,
+        description: data.weather[0].main,
+        humidity: data.main.humidity,
+        pressure: data.main.pressure,
+        temperature: data.main.temp,
+        tempMax: data.main.temp_max,
+        tempMin: data.main.temp_min,
+        feelsLike: data.main.feels_like,
+        windSpeed: data.wind.speed,
+        date: getDate(),
+    }
+    Object.keys(dataWeather).forEach(key => {
+        const clone = templateWeather.cloneNode(true);
+        clone.getElementById(key).textContent = dataWeather[key];
+        fragment.appendChild(clone)
+        console.log(clone)
+    })
+    contentWeather.appendChild(fragment)
+
+    console.log(dataWeather)
+
+}
+const getDate = () => {
+    let date = new Date ();
+    return `${date.getDay()} - ${date.getMonth()} - ${date.getFullYear()}`
 
 }
 
