@@ -1,12 +1,13 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
 const preloader = document.getElementById('preolader');
+const btnWeather = document.getElementById('btn-weather')
 
 //Functions
 
 const fetchData = async (position) => {
     try {
-
+        btnWeather.classList.add('d-none')
         loadingData(true);
 
         const {latitude, longitude, city} = position.coords;
@@ -67,7 +68,7 @@ const getDate = () => {
 }
 
 //Algorithm
-document.addEventListener('DOMContentLoaded', ()=>{
+btnWeather.addEventListener('click', ()=>{
     onLoad()
 
 })
