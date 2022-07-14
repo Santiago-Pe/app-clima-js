@@ -11,7 +11,7 @@ const fetchData = async (position) => {
         loadingData(true);
 
         const {latitude, longitude, city} = position.coords;
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?{city name}${city}}&lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}`);
         const data = await resp.json();
         printData(data);
 
@@ -68,7 +68,7 @@ const getDate = () => {
 }
 
 //Algorithm
-btnWeather.addEventListener('click', ()=>{
-    onLoad()
+// btnWeather.addEventListener('click', ()=>{
+//     onLoad()
 
-})
+// })
