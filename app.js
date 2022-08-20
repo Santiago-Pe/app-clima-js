@@ -5,6 +5,7 @@ const btnWeather = document.getElementById('btn-weather')
 
 //Functions
 
+// Llamado a la API
 const fetchData = async (position) => {
     try {
         btnWeather.classList.add('d-none')
@@ -24,12 +25,15 @@ const fetchData = async (position) => {
         loadingData(false);
     }
 }
+// Preloader
 const loadingData = state => {
     state ? preloader.classList.remove('d-none') : preloader.classList.add('d-none');
 }
+// Localizador
 const onLoad = () => {
     navigator.geolocation.getCurrentPosition(fetchData)
 }
+// Pintar informacion en DOM
 const printData = (data) => {
 
     const templateWeather = document.getElementById('template-weather').content;
@@ -61,6 +65,7 @@ const printData = (data) => {
     console.log(dataWeather)
 
 }
+// Obtener Fecha
 const getDate = () => {
     let date = new Date ();
     return `${date.getDay()} - ${date.getMonth()} - ${date.getFullYear()}`
