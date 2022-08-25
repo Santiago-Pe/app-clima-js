@@ -1,14 +1,14 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
-const preloader = document.getElementById('preolader');
-const btnWeather = document.getElementById('btn-weather')
+// const preloader = document.getElementById('preolader');
+// const btnWeather = document.getElementById('btn-weather')
 
 //Functions
 
 // Llamado a la API
 const fetchData = async (position) => {
     try {
-        btnWeather.classList.add('d-none')
+        // btnWeather.classList.add('d-none')
         loadingData(true);
 
         const {latitude, longitude, city} = position.coords;
@@ -27,7 +27,7 @@ const fetchData = async (position) => {
 }
 // Preloader
 const loadingData = state => {
-    state ? preloader.classList.remove('d-none') : preloader.classList.add('d-none');
+    state ? console.log('Cargando...') : console.log('Finalizó la carga');
 }
 // Localizador
 const onLoad = () => {
@@ -72,7 +72,7 @@ const getDate = () => {
 
 }
 
-//Algorithm
+// Algorithm
 // btnWeather.addEventListener('click', ()=>{
 //     onLoad()
 

@@ -15,62 +15,34 @@
 </head>
 <body>
 
-    <main class="container my-5">
+    <main class="container w-100 d-flex justify-content-center mt-5">
         
+        <section class="text-white bg-dark w-50" id="dynamic-content">
+          <div class="gruup-serch">
+            <input type="text">
+            <button class="btn btn-outline-primary">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
 
-        <!-- Preloader -->
-        <!-- <section class="d-flex align-items-center justify-content-center d-none" id="preolader">
-            <div class="spinner-grow" role="status">
-
-                <span class="visually-hidden">Loading...</span>
-
-            </div>
-        </section> -->
-
-        <!-- Call to action -->
-        <!-- <section class="d-flex justify-content-center">
-            <buttton class="btn btn-info" id="btn-weather">¿Qué temperatura hace?
-              <i class="bi bi-airplane-fill"></i>
-            </buttton>
-        </section> -->
-        <!-- Dynamic Data -->
-        <section class="container dynamic-content" id="dynamic-content">
+          <div class="group-weather">
+            <h2 class="city">Weather in Denver</h2>
+            <div class="temperature">51º C</div>
+            <img src="" alt="" class="icon">
+            <div class="description">Cloudy</div>
+            <div class="humidity">Humidity: 60%</div>
+            <div class="wind"> Wind speed: 6.2km/h</div>
+          </div>
           
-          <!-- Theme Layoutit -->
-          <article class="container-lay">
-            
-            <div class="">
-              1
-            </div>
-
-            <div class="">
-              2
-            </div>
-    
-            <div class="">
-              3
-            </div>
-            <div class="">
-              4
-            </div>
-            <div class="">
-              5
-            </div>
-            <div class="">
-              6
-            </div>
-            <div class="">
-              7
-            </div>
-
-          </article>
-          <!-- weather data -->
+          
+         
         </section>
         
     </main>
 
 
     <!-- Templates -->
+
     <!-- Template weather data -->
     <template id="template-weather">
         <!-- weather data -->
