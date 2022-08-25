@@ -1,0 +1,12 @@
+.container-fluid{
+    background-image: url(../assets/images/bg-card.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.section_card{
+    border-radius: 30px;
+    max-width: 420px;
+    
+
+}
