@@ -1,12 +1,22 @@
 .container-fluid{
     background-image: url(../assets/images/bg-card.jpg);
-    background-position: center;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
+    
 }
 .section_card{
+    background-color: #000000d9;
     border-radius: 30px;
     max-width: 420px;
     
-
+}
+.serch{
+    height: 35px;
+    width: 35px;
+}
+.input, .serch{
+    outline: none !important;
+    background-color: #7c7c7c2d;
 }

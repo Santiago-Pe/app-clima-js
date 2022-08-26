@@ -1,7 +1,7 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
 // const preloader = document.getElementById('preolader');
-// const btnWeather = document.getElementById('btn-weather')
+const btnWeather = document.getElementsByClassName('serch');
 
 //Functions
 
@@ -73,7 +73,7 @@ const getDate = () => {
 }
 
 // Algorithm
-// btnWeather.addEventListener('click', ()=>{
-//     onLoad()
+btnWeather.addEventListener('click', ()=>{
+    onLoad()
 
-// })
+})
