@@ -1,7 +1,7 @@
 // Const & Variables
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
 // const preloader = document.getElementById('preolader');
-const btnWeather = document.getElementsByClassName('serch');
+const btnSearch = document.getElementById('search');
 
 //Functions
 
@@ -11,8 +11,8 @@ const fetchData = async (position) => {
         // btnWeather.classList.add('d-none')
         loadingData(true);
 
-        const {latitude, longitude, city} = position.coords;
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}`);
+        const {country_code, city} = position.coords;
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country_code}&appid=<${API_KEY}&units=metric`);
         const data = await resp.json();
         printData(data);
 
@@ -30,9 +30,10 @@ const loadingData = state => {
     state ? console.log('Cargando...') : console.log('Finalizó la carga');
 }
 // Localizador
-const onLoad = () => {
-    navigator.geolocation.getCurrentPosition(fetchData)
-}
+// const onLoad = () => {
+//     navigator.geolocation.getCurrentPosition(fetchData)
+// }
+
 // Pintar informacion en DOM
 const printData = (data) => {
 
@@ -73,7 +74,7 @@ const getDate = () => {
 }
 
 // Algorithm
-btnWeather.addEventListener('click', ()=>{
-    onLoad()
+btnSearch.addEventListener('click', () => {
+    fetchData();
 
 })
