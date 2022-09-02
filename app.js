@@ -2,19 +2,18 @@
 const API_KEY = '9b4e7ed444bed4de85995a1dabc78df8';
 // const preloader = document.getElementById('preolader');
 const btnSearch = document.getElementById('search');
-
+const input = document.getElementById('input');
 //Functions
 
 // Llamado a la API
-const fetchData = async (position) => {
+const fetchData = async (city) => {
     try {
         // btnWeather.classList.add('d-none')
         loadingData(true);
 
-        const {country_code, city} = position.coords;
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country_code}&appid=<${API_KEY}&units=metric`);
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
         const data = await resp.json();
-        printData(data);
+        // printData(data);
 
         console.log(data)
 
@@ -75,6 +74,5 @@ const getDate = () => {
 
 // Algorithm
 btnSearch.addEventListener('click', () => {
-    fetchData();
-
+    fetchData(input.value)
 })
