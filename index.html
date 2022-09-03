@@ -18,27 +18,16 @@
 
     <main class="container-fluid w-100 d-flex justify-content-center vw-100 vh-100 align-items-center m-auto bg-light">
         
-      <section class="text-light  p-5 section_card m-2 w-100" id="dynamic-content">
-        <div class="d-flex align-items-center justify-content-between mb-3"  value="">
+      <section class="text-light  p-5 section_card m-2 w-100">
+        <div class="d-flex align-items-center justify-content-between mb-3" >
           <input type="text" class="border-0 input p-2 ps-2 rounded-pill text-light w-100 me-2" placeholder="Search" id="input">
           <button class="rounded-circle border-0 serch btn-outline-light search" id="search">
             <i class="bi bi-search"></i>
           </button>
         </div>
+        <article id="dynamic-content">
 
-        <div class="group-weather">
-          <h2 class="city item">Weather in Denver</h2>
-          <h3 class="temperature">51º C</h3>
-          <img src="" alt="" class="icon">
-
-          <div class="d-flex flex-column justify-content-evenly">
-            <span class="description p-0">Cloudy</span>
-            <span class="humidity p-0">Humidity: 60%</span>
-            <span class="wind p-0"> Wind speed: 6.2km/h</span>
-          </div>
-          
-        </div>
-            
+        </article>
       </section>
         
     </main>
@@ -49,28 +38,18 @@
     <!-- Template weather data -->
     <template id="template-weather">
         <!-- weather data -->
-        <section class="text-light  p-5 section_card m-2 w-100" id="dynamic-content">
-          <div class="d-flex align-items-center justify-content-between mb-3">
-            <input type="text" class="border-0 input p-2 ps-2 rounded-pill text-light w-100 me-2"placeholder="Serch">
-            <button class="rounded-circle border-0 search btn-outline-light" id="search">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
- 
-          <div class="group-weather">
-            <h2 class="city item"></h2>
-            <h3 class="temperature"></h3>
-            <img src="" alt="" class="icon">
+        <div class="group-weather">
+          <h2 class="city item" id="location">Weather in </h2>
+          <h3 id="temperature"></h3>
+          <img src="" alt="" id="icon">
 
-            <div class="d-flex flex-column justify-content-evenly">
-              <span class="description p-0"></span>
-              <span class="humidity p-0"></span>
-              <span class="wind p-0"></span>
-            </div>
-            
+          <div class="d-flex flex-column justify-content-evenly">
+            <span class="p-0" id="description"></span>
+            <span class=" p-0" id="humidity">Humidity: </span>
+            <span class="p-0" id="wind">Wind speed: </span>
           </div>
-              
-        </section>
+          
+        </div>
 
     </template>
 
