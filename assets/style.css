@@ -9,14 +9,25 @@
 .section_card{
     background-color: #000000d9;
     border-radius: 30px;
-    max-width: 420px;
+    max-width: 640px;
+    min-width: 320px;
     
 }
 .search{
     height: 35px;
     width: 35px;
 }
-.input, .serch{
-    outline: none !important;
+.spinner-border{
+    margin: auto;
+    z-index: 0;
+}
+.input, .search{
+    outline: none !important; 
+    /* No me toma el outline */
     background-color: #7c7c7c2d;
+}
+@media (max-width: 576px){
+    span{
+        margin-bottom: 10px;
+    }
 }

@@ -18,13 +18,22 @@
 
     <main class="container-fluid w-100 d-flex justify-content-center vw-100 vh-100 align-items-center m-auto bg-light">
         
-      <section class="text-light  p-5 section_card m-2 w-100">
+      <section class="text-light  p-5 section_card m-2 w-100 d-flex flex-column">
+
+        <!-- Search Section -->
         <div class="d-flex align-items-center justify-content-between mb-3" >
           <input type="text" class="border-0 input p-2 ps-2 rounded-pill text-light w-100 me-2" placeholder="Search" id="input">
           <button class="rounded-circle border-0 serch btn-outline-light search" id="search">
             <i class="bi bi-search"></i>
           </button>
         </div>
+
+        <!-- Preloader -->
+        <div class="spinner-border text-light d-none" role="status" id="preolader">
+          <span class="visually-hidden"></span>
+        </div>
+
+        <!-- Card of Template -->
         <article id="dynamic-content">
 
         </article>
@@ -39,15 +48,25 @@
     <template id="template-weather">
         <!-- weather data -->
         <div class="group-weather">
+
+          <span class="" id="date"></span>
           <h2 class="city item" id="location">Weather in </h2>
           <h3 id="temperature"></h3>
           <img src="" alt="" id="icon">
 
-          <div class="d-flex flex-column justify-content-evenly">
-            <span class="p-0" id="description"></span>
-            <span class=" p-0" id="humidity">Humidity: </span>
-            <span class="p-0" id="wind">Wind speed: </span>
+          <div class="row">
+            <div class="d-flex flex-column justify-content-evenly col-12 col-sm-6 first-column ">
+              <span class="p-0" id="description"></span>
+              <span class=" p-0" id="humidity"></span>
+              <span class="p-0" id="wind"></span>
+            </div>
+            <div class="d-flex flex-column justify-content-evenly col-12 col-sm-6 ">
+              <span class="p-0" id="min-temp"></span>
+              <span class=" p-0" id="max-temp"></span>
+              <span class="p-0" id="feels-like">Feels Like: </span>
+            </div>
           </div>
+           
           
         </div>
 
